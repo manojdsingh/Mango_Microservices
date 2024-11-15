@@ -84,8 +84,6 @@ namespace Mango.Services.CouponAPI.Controllers
                 _db.Coupons.Add(obj);
                 _db.SaveChanges();
 
-
-               
                 var options = new Stripe.CouponCreateOptions
                 {
                     AmountOff = (long)(couponDto.DiscountAmount*100),
@@ -142,8 +140,6 @@ namespace Mango.Services.CouponAPI.Controllers
 
                 var service = new Stripe.CouponService();
                 service.Delete(obj.CouponCode);
-
-
             }
             catch (Exception ex)
             {
